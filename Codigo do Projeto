@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setembro Amarelo</title>
+    <style>
+        :root {
+            color-scheme: only light;
+            --creme: #fffdf7;
+            --branco-suave: #ffffff;
+            --amarelo-claro: #fff1b8;
+            --amarelo-suave: #fff8dd;
+            --dourado: #e8c95c;
+            --marrom-suave: #665522;
+            --texto: #49453b;
+            --borda: #f0e1ad;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--creme);
+            color: var(--texto);
+            margin: 0;
+        }
+
+        header {
+            background-color: var(--amarelo-claro);
+            text-align: center;
+            padding: 25px;
+        }
+
+        h1, h2 {
+            color: var(--marrom-suave);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        main {
+            background-color: var(--branco-suave);
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 25px;
+            border: 1px solid var(--borda);
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--dourado);
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .imagens {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .imagens img {
+            width: 50%;
+            height: 220px;
+            object-fit: cover;
+            border: 2px solid var(--dourado);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .acolhimento {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .frase {
+            background-color: var(--amarelo-suave);
+            border-left: 5px solid var(--dourado);
+            padding: 18px;
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        .cvv {
+            background-color: var(--amarelo-claro);
+            text-align: center;
+            padding: 18px;
+            margin-top: 25px;
+            font-weight: bold;
+            color: var(--marrom-suave);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: var(--marrom-suave);
+        }
+
+        @media (max-width: 600px) {
+            .imagens {
+                display: block;
+            }
+
+            .imagens img {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .acolhimento {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Setembro Amarelo</h1>
+        <p>Valorização da vida e cuidado com a saúde mental</p>
+    </header>
+
+    <main>
+        <h2>O que é?</h2>
+        <p>Setembro Amarelo é uma campanha de conscientização sobre a saúde mental e a prevenção do suicídio. Falar sobre o assunto pode ajudar muitas pessoas.</p>
+
+        <div class="imagens">
+            <img src="https://thumb.wikimedia.org/wikipedia/pt/thumb/7/72/Falar_e_a_melhor_solucao.jpg/250px-Falar_e_a_melhor_solucao.jpg?utm_source=pt.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" alt="Imagem sobre falar e acolher" />
+            <img src="https://static.wixstatic.com/media/26b667_0401343969b14679a8feca952d9aea00~mv2_d_3000_2105_s_2.jpg/v1/fill/w_3000,h_2105,al_c/26b667_0401343969b14679a8feca952d9aea00~mv2_d_3000_2105_s_2.jpg" alt="Imagem sobre acolhimento e apoio" />
+        </div>
+
+        <h2>Como ajudar?</h2>
+        <ul>
+            <li>Esteja presente e pergunte com carinho como a pessoa está.</li>
+            <li>Ouça com atenção, sem interromper, julgar ou diminuir o que ela sente.</li>
+            <li>Mostre que ela não está sozinha e ofereça companhia quando possível.</li>
+            <li>Respeite o tempo e os limites da pessoa, sem pressioná-la a falar.</li>
+            <li>Incentive a busca por ajuda profissional e ajude a encontrar apoio.</li>
+            <li>Continue oferecendo cuidado e atenção, mesmo depois da conversa.</li>
+        </ul>
+
+        <h2>Frases de acolhimento</h2>
+        <div class="acolhimento">
+            <p class="frase">Você não precisa enfrentar tudo sozinho(a). Estou aqui para ouvir.</p>
+            <p class="frase">Seus sentimentos são importantes e merecem ser acolhidos.</p>
+            <p class="frase">Pedir ajuda é um ato de coragem, não de fraqueza.</p>
+            <p class="frase">Mesmo nos dias difíceis, sua vida tem valor e significado.</p>
+        </div>
+
+        <div class="cvv">
+            Precisa conversar? Ligue para o CVV: 188.<br>
+            Atendimento gratuito, 24 horas por dia.
+        </div>
+    </main>
+
+    <footer>
+        Setembro Amarelo - Sua vida importa.
+    </footer>
+</body>
+</html>
