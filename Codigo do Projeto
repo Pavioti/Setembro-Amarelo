@@ -19,8 +19,8 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #fff2a8;
-            color: #292929;
+            background: #fff4c4;
+            color: #50431f;
             line-height: 1.6;
             margin: 0;
         }
@@ -31,9 +31,9 @@
         ========================= */
 
         header {
-            padding: 50px 15px;
+            padding: 40px 15px;
             text-align: center;
-            background: linear-gradient(120deg, #ffd900, #fff07a);
+            background: #fff0a8;
         }
 
         header h1 {
@@ -46,26 +46,34 @@
         ========================= */
 
         nav {
-            background: #333;
+            background: #fff9e8;
             padding: 10px;
             text-align: center;
             position: sticky;
             top: 0;
+            border-bottom: 1px solid #eadb9c;
+            z-index: 1;
         }
 
-        nav a {
+        nav button {
             display: inline-block;
-            color: #222;
-            background: #ffd900;
-            padding: 9px 13px;
-            margin: 4px;
-            border-radius: 5px;
-            text-decoration: none;
+            color: #50431f;
+            background: #fff5cc;
+            padding: 8px 13px;
+            margin: 3px;
+            border: 1px solid #e4d28a;
+            border-radius: 4px;
             font-weight: bold;
+            cursor: pointer;
         }
 
-        nav a:hover {
-            background: white;
+        nav button:hover {
+            background: #fff0a8;
+        }
+
+        nav button[aria-pressed="true"] {
+            background: #f2d45d;
+            border-color: #c9a52e;
         }
 
 
@@ -81,22 +89,25 @@
 
         section {
             background: white;
-            padding: 28px;
-            margin-bottom: 25px;
-            border: 1px solid #e6dc9b;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px #00000012;
+            padding: 30px;
+            margin-bottom: 20px;
+            border: 1px solid #eadfb5;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #0000000a;
         }
 
-        #ajudar,
+        section[hidden] {
+            display: none;
+        }
+
         #contato {
-            background: #fff2a8;
+            background: #fff9e8;
         }
 
         h2 {
-            color: #333;
-            border-bottom: 2px solid #ffd900;
-            padding-bottom: 6px;
+            color: #5b4817;
+            border-bottom: 1px solid #dfbe43;
+            padding-bottom: 8px;
         }
 
         img {
@@ -104,20 +115,19 @@
             width: 100%;
             max-width: 500px;
             margin: 15px auto;
-            border: 3px solid #ffd900;
-            border-radius: 8px;
+            border: 1px solid #eadfb5;
+            border-radius: 6px;
         }
 
         #ajudar h3 {
-            background: #ffe66a;
-            padding: 8px 12px;
-            border-radius: 5px;
+            border-left: 3px solid #d6ad2e;
+            padding: 4px 10px;
         }
 
         #frases p {
-            background: #fff8c7;
+            background: #fff9e8;
             padding: 12px;
-            border-left: 4px solid #ffd900;
+            border-left: 3px solid #dfbe43;
         }
 
         #contato {
@@ -127,10 +137,11 @@
         #contato a {
             display: inline-block;
             padding: 9px 14px;
-            background: white;
-            border: 1px solid #333;
-            border-radius: 5px;
-            color: #222;
+            background: #fff1b8;
+            border: 1px solid #c9a52e;
+            border-radius: 4px;
+            color: #50431f;
+            text-decoration: none;
         }
 
         #contato > strong {
@@ -144,14 +155,14 @@
         ========================= */
 
         footer {
-            background: #333;
-            color: white;
+            background: #f3e3a6;
+            color: #50431f;
             text-align: center;
-            padding: 22px 15px;
+            padding: 18px 15px;
         }
 
         footer strong {
-            color: #ffd900;
+            color: #8c6b12;
         }
 
     </style>
@@ -177,11 +188,10 @@
 
     <nav>
 
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#ajudar">Como ajudar</a>
-        <a href="#frases">Acolhimento</a>
-        <a href="#contato">Contato</a>
+        <button type="button" data-aba="sobre" aria-controls="sobre" aria-pressed="true">Início</button>
+        <button type="button" data-aba="ajudar" aria-controls="ajudar" aria-pressed="false">Como ajudar</button>
+        <button type="button" data-aba="frases" aria-controls="frases" aria-pressed="false">Acolhimento</button>
+        <button type="button" data-aba="contato" aria-controls="contato" aria-pressed="false">Contato</button>
 
     </nav>
 
@@ -219,7 +229,7 @@
 
         <!-- COMO AJUDAR -->
 
-        <section id="ajudar">
+        <section id="ajudar" hidden>
 
             <h2>Como ajudar?</h2>
 
@@ -246,7 +256,7 @@
 
         <!-- FRASES -->
 
-        <section id="frases">
+        <section id="frases" hidden>
 
             <h2>Frases de acolhimento</h2>
 
@@ -261,7 +271,7 @@
 
         <!-- CVV -->
 
-        <section id="contato">
+        <section id="contato" hidden>
 
             <h2>Precisa conversar?</h2>
 
@@ -298,6 +308,22 @@
         </p>
 
     </footer>
+
+    <script>
+        const botoes = document.querySelectorAll("[data-aba]");
+
+        botoes.forEach((botao) => {
+            botao.addEventListener("click", () => {
+                botoes.forEach((item) => {
+                    item.setAttribute("aria-pressed", "false");
+                    document.getElementById(item.getAttribute("data-aba")).hidden = true;
+                });
+
+                botao.setAttribute("aria-pressed", "true");
+                document.getElementById(botao.getAttribute("data-aba")).hidden = false;
+            });
+        });
+    </script>
 
 </body>
 
