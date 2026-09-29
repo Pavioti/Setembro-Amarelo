@@ -21,7 +21,7 @@
             font-family: Arial, sans-serif;
             background: #fff2a8;
             color: #292929;
-            line-height: 1.5;
+            line-height: 1.6;
             margin: 0;
         }
 
@@ -31,13 +31,14 @@
         ========================= */
 
         header {
-            padding: 30px 15px;
+            padding: 50px 15px;
             text-align: center;
-            background: #ffd900;
+            background: linear-gradient(120deg, #ffd900, #fff07a);
         }
 
         header h1 {
             margin: 0;
+            font-size: 2.5rem;
         }
 
         /* =========================
@@ -48,15 +49,23 @@
             background: #333;
             padding: 10px;
             text-align: center;
+            position: sticky;
+            top: 0;
         }
 
         nav a {
             display: inline-block;
             color: #222;
-            background: #fff;
-            padding: 8px;
+            background: #ffd900;
+            padding: 9px 13px;
             margin: 4px;
+            border-radius: 5px;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background: white;
         }
 
 
@@ -66,18 +75,28 @@
 
         main {
             width: 90%;
-            margin: 20px auto;
+            max-width: 1100px;
+            margin: 35px auto;
         }
 
         section {
             background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
+            padding: 28px;
+            margin-bottom: 25px;
+            border: 1px solid #e6dc9b;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px #00000012;
+        }
+
+        #ajudar,
+        #contato {
+            background: #fff2a8;
         }
 
         h2 {
             color: #333;
+            border-bottom: 2px solid #ffd900;
+            padding-bottom: 6px;
         }
 
         img {
@@ -85,18 +104,38 @@
             width: 100%;
             max-width: 500px;
             margin: 15px auto;
+            border: 3px solid #ffd900;
+            border-radius: 8px;
+        }
+
+        #ajudar h3 {
+            background: #ffe66a;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        #frases p {
+            background: #fff8c7;
+            padding: 12px;
+            border-left: 4px solid #ffd900;
         }
 
         #contato {
-            background: #ffdf24;
             text-align: center;
-            padding: 20px;
         }
 
         #contato a {
             display: inline-block;
-            padding: 8px;
+            padding: 9px 14px;
             background: white;
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #222;
+        }
+
+        #contato > strong {
+            display: block;
+            font-size: 2rem;
         }
 
 
@@ -108,7 +147,7 @@
             background: #333;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 22px 15px;
         }
 
         footer strong {
